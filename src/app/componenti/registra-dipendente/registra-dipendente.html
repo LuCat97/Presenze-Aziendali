@@ -1,0 +1,50 @@
+<div class="register-page">
+  <div class="register-header">
+    <h1>Registra dipendente</h1>
+    <p>Inserisci i dati del nuovo dipendente per abilitarne l’accesso al gestionale.</p>
+  </div>
+
+  <div class="register-card">
+    <form [formGroup]="formRegistrazione" class="register-form">
+      <div class="form-grid">
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input id="nome" type="text" formControlName="nome" placeholder="Mario Rossi" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email aziendale</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="mario.rossi@azienda.it"
+          />
+        </div>
+
+        <div class="field field-full">
+          <label for="password">Password iniziale</label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Inserisci una password"
+          />
+        </div>
+        <div class="field">
+          <label for="ruolo">Ruolo</label>
+          <select id="ruolo" formControlName="ruolo">
+            <option value="dipendente">Dipendente</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="primary-btn" (click)="onRegistra()">
+          Registra dipendente
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

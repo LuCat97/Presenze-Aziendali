@@ -1,0 +1,80 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.sidebar {
+  width: 270px;
+  background: #111827;
+  color: white;
+  padding: 24px 18px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logo h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.logo p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu a,
+.logout-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #e5e7eb;
+  transition: 0.2s ease;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.menu a.active {
+  background: #16a34a;
+  color: white;
+}
+
+.logout-btn {
+  margin-top: 6px;
+  border: none;
+  background: #dc2626;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #b91c1c;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}

@@ -1,0 +1,81 @@
+<div class="page-container">
+  <header class="page-header">
+    <h1>Imposta presenze</h1>
+    @if (messaggio) {
+      <div class="success-message">
+        {{ messaggio }}
+      </div>
+    }
+  </header>
+
+  <div class="content-grid">
+    <!-- Lista dipendenti da impostare -->
+    <section class="section-dipendenti">
+      <h2>Dipendenti</h2>
+      @if (dipendenti.length > 0) {
+        <div class="dipendenti-grid">
+          @for (dipendente of dipendenti; track dipendente.uid) {
+            <div class="dipendente-card">
+              <div class="dipendente-info">
+                <div class="dipendente-avatar">
+                  {{ dipendente.nome.charAt(0).toUpperCase() }}
+                </div>
+                <div>
+                  <h3>{{ dipendente.nome }}</h3>
+                  <p>{{ dipendente.email }}</p>
+                </div>
+              </div>
+
+              <button
+                class="presence-button"
+                [class.active]="!giaPresente(dipendente.uid)"
+                [disabled]="giaPresente(dipendente.uid)"
+                (click)="segnaPresente(dipendente)"
+              >
+                @if (giaPresente(dipendente.uid)) {
+                  <span class="check-icon">✓</span>
+                  Già presente
+                } @else {
+                  Presente
+                }
+              </button>
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="empty-state">
+          <div class="empty-icon">👥</div>
+          <p>Nessun dipendente trovato</p>
+        </div>
+      }
+    </section>
+
+    <!-- Presenze di oggi -->
+    <section class="section-presenze">
+      <h2>Presenze di oggi</h2>
+      @if (presenzeOggi.length > 0) {
+        <div class="presenze-list">
+          @for (presenza of presenzeOggi; track presenza.id) {
+            <div class="presenza-item">
+              <div class="presenza-avatar">
+                {{ presenza.nomeDipendente.charAt(0).toUpperCase() }}
+              </div>
+              <div class="presenza-info">
+                <h4>{{ presenza.nomeDipendente }}</h4>
+                <p>{{ presenza.emailDipendente }}</p>
+              </div>
+              <div class="presenza-stato presente">
+                {{ presenza.stato }}
+              </div>
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="empty-state">
+          <div class="empty-icon">📅</div>
+          <p>Nessuna presenza registrata oggi</p>
+        </div>
+      }
+    </section>
+  </div>
+</div>

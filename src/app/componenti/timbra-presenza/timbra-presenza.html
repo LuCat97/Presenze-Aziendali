@@ -1,0 +1,43 @@
+<div class="stamp-page">
+  <div class="stamp-card">
+    <div class="stamp-header">
+      <div class="stamp-icon">⏱️</div>
+      <h1>Timbra presenza</h1>
+      <p>Registra la tua presenza giornaliera in modo rapido e sicuro.</p>
+    </div>
+
+    @if (messaggio) {
+      <div class="success-banner">
+        {{ messaggio }}
+      </div>
+    }
+
+    @if (uidDipendente) {
+      <div class="employee-panel">
+        <div class="employee-row">
+          <span class="label">Nome</span>
+          <strong>{{ nomeDipendente }}</strong>
+        </div>
+
+        <div class="employee-row">
+          <span class="label">Email</span>
+          <strong>{{ emailDipendente }}</strong>
+        </div>
+      </div>
+
+      <button class="stamp-button" [disabled]="giaTimbrato" (click)="timbraPresenza()">
+        @if (giaTimbrato) {
+          ✓ Presenza già registrata
+        } @else {
+          Timbra presenza
+        }
+      </button>
+    } @else {
+      <div class="empty-state">
+        <div class="empty-emoji">🔐</div>
+        <h2>Nessun utente loggato</h2>
+        <p>Effettua l’accesso per registrare la tua presenza.</p>
+      </div>
+    }
+  </div>
+</div>

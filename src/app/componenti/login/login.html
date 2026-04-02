@@ -1,0 +1,42 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <h1>Gestionale Presenze</h1>
+      <p>Accedi con le tue credenziali</p>
+    </div>
+
+    <form class="login-form">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="nome@example.com"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="••••••••"
+          required
+        />
+      </div>
+
+      <button type="button" class="login-button" (click)="login()">Accedi</button>
+    </form>
+
+    @if (errore) {
+      <div class="error-message">
+        {{ errore }}
+      </div>
+    }
+  </div>
+</div>

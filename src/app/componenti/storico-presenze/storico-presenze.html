@@ -1,0 +1,42 @@
+<div class="history-page">
+  <div class="history-header">
+    <h1>Storico presenze</h1>
+  </div>
+
+  @if (presenzeByData.length > 0) {
+    <div class="date-accordion">
+      @for (dataPresenze of presenzeByData; track dataPresenze[0]) {
+        <details class="date-section">
+          <summary class="date-header">
+            <span class="date">{{ dataPresenze[0] }}</span>
+            <span class="count"
+              >{{ dataPresenze[1].length }} presenz{{
+                dataPresenze[1].length === 1 ? 'a' : 'e'
+              }}</span
+            >
+          </summary>
+
+          <div class="presenze-day">
+            @for (presenza of dataPresenze[1]; track presenza.id) {
+              <div class="presenza-card">
+                <div class="presenza-avatar">
+                  {{ presenza.nomeDipendente.charAt(0).toUpperCase() }}
+                </div>
+                <div class="presenza-info">
+                  <h3>{{ presenza.nomeDipendente }}</h3>
+                  <p>{{ presenza.emailDipendente }}</p>
+                </div>
+                <span class="presenza-stato">{{ presenza.stato }}</span>
+              </div>
+            }
+          </div>
+        </details>
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      <div class="empty-icon">📂</div>
+      <p>Nessuna presenza registrata</p>
+    </div>
+  }
+</div>

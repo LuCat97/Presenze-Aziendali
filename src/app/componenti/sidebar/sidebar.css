@@ -1,0 +1,43 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.menu a {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: white;
+  background: #374151;
+  border-radius: 12px;
+  transition: 0.2s ease;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.menu a:hover {
+  background: #4b5563;
+}
+
+.menu a.active {
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.disabled-link {
+  opacity: 0.8;
+  cursor: default;
+}
+.menu span {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  color: white;
+  background: #374151;
+  border-radius: 12px;
+  opacity: 0.8;
+}

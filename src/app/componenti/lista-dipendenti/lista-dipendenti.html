@@ -1,0 +1,39 @@
+<div class="page-shell">
+  <div class="page-top">
+    <div>
+      <h1>Lista dipendenti</h1>
+      <p>Consulta rapidamente tutti i dipendenti registrati nel gestionale.</p>
+    </div>
+  </div>
+
+  @if (utenti.length > 0) {
+    <div class="employee-grid">
+      @for (utente of utenti; track utente.id ?? utente.uid) {
+        <article class="employee-card">
+          <div class="employee-main">
+            <div class="employee-avatar">
+              {{ utente.nome?.charAt(0)?.toUpperCase() }}
+            </div>
+
+            <div class="employee-text">
+              <h2>{{ utente.nome }}</h2>
+              <p>{{ utente.email }}</p>
+            </div>
+          </div>
+
+          <div class="employee-badges">
+            <span class="badge role">
+              {{ utente.ruolo }}
+            </span>
+          </div>
+        </article>
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      <div class="empty-emoji">📂</div>
+      <h2>Nessun dipendente presente</h2>
+      <p>Non risultano ancora utenti registrati nel sistema.</p>
+    </div>
+  }
+</div>

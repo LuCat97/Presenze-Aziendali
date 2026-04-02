@@ -1,0 +1,100 @@
+.date-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.date-section {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.date-header {
+  padding: 20px 24px;
+  background: #f8fafc;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-header::-webkit-details-marker {
+  display: none;
+}
+
+.date {
+  font-weight: 700;
+  font-size: 18px;
+  color: #111827;
+}
+
+.count {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.presenze-day {
+  padding: 0 24px 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.date-section[open] .presenze-day {
+  max-height: 500px;
+  padding: 20px 24px 24px;
+}
+
+.presenza-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  background: #fafbfc;
+  margin-bottom: 12px;
+}
+
+.presenza-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.presenza-info h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: #0f172a;
+}
+
+.presenza-info p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.presenza-stato {
+  margin-left: auto;
+  padding: 6px 12px;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}

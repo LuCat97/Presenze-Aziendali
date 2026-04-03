@@ -23,8 +23,6 @@ export class Login {
   errore = '';
 
   async login() {
-    console.log('EMAIL INSERITA:', this.email); // ← AGGIUNGI QUESTO
-    console.log('PASSWORD INSERITA:', this.password); // ← AGGIUNGI QUESTO
     const emailPulita = this.email.trim();
     const passwordPulita = this.password.trim();
 
@@ -57,7 +55,7 @@ export class Login {
       this.cdr.detectChanges();
     } catch (error: any) {
       console.error('ERRORE LOGIN FIREBASE:', error);
-      this.errore = error?.message || 'Errore login';
+      this.errore = 'Errore login: Credenziali errate';
       this.cdr.detectChanges();
     }
   }
